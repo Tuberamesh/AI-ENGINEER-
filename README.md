@@ -27,10 +27,10 @@ I enjoy working at the intersection of **AI, software engineering, data and clou
 My work focuses on taking an AI capability and engineering the surrounding system required to make it **usable, reliable, scalable and deployable**.
 
 ---
-
+```markdown
 ## 🚀 What I Build
 
-``
+```text
                     REAL-WORLD PROBLEM
                            │
                            ▼
