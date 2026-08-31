@@ -30,7 +30,7 @@ My work focuses on taking an AI capability and engineering the surrounding syste
 
 ## 🚀 What I Build
 
-```text
+``
                     REAL-WORLD PROBLEM
                            │
                            ▼
