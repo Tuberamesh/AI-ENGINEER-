@@ -13,197 +13,180 @@
 </p>
 
 <p align="center">
-  <a href="YOUR_LINKEDIN_URL">LinkedIn</a>
-  &nbsp;•&nbsp;
-  <a href="YOUR_YOUTUBE_URL">YouTube</a>
-  &nbsp;•&nbsp;
-  <a href="YOUR_INSTAGRAM_URL">Instagram</a>
-  &nbsp;•&nbsp;
-  <a href="YOUR_PORTFOLIO_URL">Portfolio</a>
+  <a href="YOUR_PORTFOLIO_URL">🌐 Portfolio</a> ·
+  <a href="YOUR_LINKEDIN_URL">💼 LinkedIn</a> ·
+  <a href="YOUR_YOUTUBE_URL">▶️ YouTube</a> ·
+  <a href="YOUR_INSTAGRAM_URL">📸 Instagram</a>
 </p>
 
 ---
 
 ## 🧑‍💻 About Me
 
-I'm an **AI Engineer** focused on building practical AI-powered applications using **Generative AI, Large Language Models, RAG, AI Agents and modern AI engineering practices**.
+I'm an **AI Engineer** focused on building practical applications with **Generative AI, Large Language Models, RAG and AI Agents**.
 
-I work across the layers required to turn AI capabilities into real software — connecting **models, knowledge, data, APIs, databases, infrastructure and cloud** into complete applications.
+I work across the engineering layers required to turn AI capabilities into real software — connecting **models, knowledge, data, APIs, databases, infrastructure and cloud**.
 
-My focus is on building AI systems that are **useful, reliable and production-ready**.
+> **I build AI systems that solve real problems and are designed for real-world use.**
 
 ---
 
 ## 🧠 AI Engineering Stack
 
-| Layer | Technologies |
+| Area | Technologies |
 |---|---|
-| **AI & Models** | Large Language Models · Generative AI · AI APIs · Open-Source Models |
-| **Context** | Prompt Engineering · Context Engineering · Structured Outputs |
-| **Knowledge** | Embeddings · Semantic Search · Vector Databases · RAG |
-| **Intelligence** | AI Agents · Tool Calling · Function Calling · MCP |
-| **Application** | Python · REST APIs · FastAPI |
-| **Data** | SQL · PostgreSQL · Database Systems |
-| **Infrastructure** | Git · GitHub · Linux · Docker · Docker Compose · CI/CD |
-| **Cloud** | AWS · Cloud Deployment · Cloud Infrastructure |
-| **Production** | Evaluation · Monitoring · Logging · Cost Optimization · AI Security |
+| 🧠 **AI & Models** | LLMs · Generative AI · AI APIs · Open-Source Models |
+| 🧩 **Context** | Prompt Engineering · Context Engineering · Structured Outputs |
+| 🔎 **RAG** | Embeddings · Semantic Search · Vector Databases · RAG |
+| 🤖 **Agents** | AI Agents · Tool Calling · Function Calling · MCP |
+| 🌐 **Application** | Python · REST APIs · FastAPI · HTTP |
+| 🗄️ **Data** | SQL · PostgreSQL · Vector Storage |
+| ⚙️ **Engineering** | Git · GitHub · Linux · Docker · CI/CD |
+| ☁️ **Cloud** | AWS · Cloud Deployment |
+| 🛡️ **Production** | Evaluation · Monitoring · Logging · Security · Cost Optimization |
 
 ---
 
-## 🔄 How I Engineer an AI Application
+## 🔄 From Problem to Production
 
 <pre>
-                         REAL-WORLD PROBLEM
-                                  │
-                                  ▼
-                         ┌─────────────────┐
-                         │   AI DESIGN     │
-                         └────────┬────────┘
-                                  │
-                    ┌─────────────┼─────────────┐
-                    ▼             ▼             ▼
-                 DATA          KNOWLEDGE      MODEL
-                    │             │             │
-                    │             ▼             │
-                    │            RAG             │
-                    │             │             │
-                    └─────────────┼─────────────┘
-                                  ▼
-                         ┌─────────────────┐
-                         │ AI APPLICATION  │
-                         └────────┬────────┘
-                                  │
-                     ┌────────────┼────────────┐
-                     ▼            ▼            ▼
-                   LLM         AGENTS        TOOLS
-                     │            │            │
-                     └────────────┼────────────┘
-                                  ▼
-                         ┌─────────────────┐
-                         │   FASTAPI / API │
-                         └────────┬────────┘
-                                  │
-                     ┌────────────┼────────────┐
-                     ▼                         ▼
-                PostgreSQL                 Vector DB
-                     │                         │
-                     └────────────┬────────────┘
-                                  ▼
-                         ┌─────────────────┐
-                         │ DOCKER / CLOUD  │
-                         └────────┬────────┘
-                                  │
-                                  ▼
-                            DEPLOYMENT
-                                  │
-                                  ▼
-                    ┌──────────────────────────┐
-                    │ EVALUATION & MONITORING  │
-                    └────────────┬─────────────┘
-                                 │
-                                 ▼
-                          PRODUCTION AI
+                    REAL-WORLD PROBLEM
+                             │
+                             ▼
+                       AI ARCHITECTURE
+                             │
+              ┌──────────────┼──────────────┐
+              ▼              ▼              ▼
+            DATA          KNOWLEDGE        LLM
+              │              │              │
+              │              ▼              │
+              │             RAG              │
+              │              │              │
+              └──────────────┼──────────────┘
+                             ▼
+                      AI APPLICATION
+                             │
+                  ┌──────────┼──────────┐
+                  ▼          ▼          ▼
+                AGENTS      TOOLS      APIs
+                  │          │          │
+                  └──────────┼──────────┘
+                             ▼
+                          FASTAPI
+                             │
+                    ┌────────┴────────┐
+                    ▼                 ▼
+               PostgreSQL         Vector DB
+                    │                 │
+                    └────────┬────────┘
+                             ▼
+                       DOCKER + AWS
+                             │
+                             ▼
+                        DEPLOYMENT
+                             │
+                             ▼
+                  EVALUATION + MONITORING
+                             │
+                             ▼
+                       🚀 PRODUCTION
 </pre>
 
 ---
 
 ## 🚀 What I Build
 
-I build complete AI applications around real-world problems, including:
+<table>
+<tr>
+<td width="50%">
 
-- **LLM Applications**
-- **RAG Systems**
-- **AI Agents**
-- **AI-powered APIs**
-- **Knowledge-based AI Applications**
-- **Data + AI Applications**
-- **Cloud-deployed AI Systems**
-- **Production AI Applications**
+### 🤖 LLM Applications
+
+AI-powered applications built around practical real-world problems.
+
+</td>
+<td width="50%">
+
+### 🔎 RAG Systems
+
+Knowledge-aware applications connecting LLMs with external data.
+
+</td>
+</tr>
+
+<tr>
+<td width="50%">
+
+### 🧠 AI Agents
+
+Tool-using systems that interact with APIs, databases and external services.
+
+</td>
+<td width="50%">
+
+### ☁️ Production AI
+
+AI systems engineered with APIs, databases, containers and cloud deployment.
+
+</td>
+</tr>
+</table>
 
 ---
 
-## 🛠️ Engineering Approach
+## 🛠️ Core Technologies
 
-I focus on more than getting a model to generate a response.
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=python,postgres,fastapi,git,github,linux,docker,aws" />
+</p>
 
-My engineering approach considers:
-
-**Architecture → Data → AI → Application → APIs → Infrastructure → Evaluation → Production**
-
-The systems I build are designed with:
-
-`Reliability` · `Maintainability` · `Scalability` · `Observability` · `Security` · `Cost`
+<p align="center">
+  <b>Python</b> · <b>SQL</b> · <b>LLMs</b> · <b>RAG</b> · <b>Agents</b> ·
+  <b>FastAPI</b> · <b>PostgreSQL</b> · <b>Docker</b> · <b>AWS</b>
+</p>
 
 ---
 
 ## 📂 Featured Projects
 
-My projects demonstrate practical AI engineering through complete applications rather than isolated experiments.
+I build **complete AI systems rather than isolated model experiments**.
 
-### 🤖 AI Applications
-
-End-to-end applications integrating AI models with application logic, data and APIs.
-
-### 🔎 RAG Systems
-
-Knowledge-aware applications that connect LLMs with external or private information.
-
-### 🧠 AI Agents
-
-Tool-using AI systems capable of interacting with external services and completing tasks.
-
-### ☁️ Production Systems
-
-Containerized and cloud-deployed AI applications with evaluation and monitoring.
+| Project Focus | What It Demonstrates |
+|---|---|
+| 🤖 **AI Applications** | LLM integration · Application Logic · APIs |
+| 🔎 **RAG Systems** | Retrieval · Embeddings · Vector Search · Grounded Generation |
+| 🧠 **AI Agents** | Tool Calling · Workflows · External Integrations |
+| ☁️ **Production Systems** | Docker · Cloud · Evaluation · Monitoring |
 
 ---
 
 ## 🌐 Content & Community
 
-I create technology-focused content where I share practical concepts, projects and insights around **AI, software and technology**.
+I create technology-focused content around **AI, software and practical engineering**.
 
 <p align="center">
-
-<a href="YOUR_YOUTUBE_URL">
-<img src="https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white" />
-</a>
-
-<a href="YOUR_LINKEDIN_URL">
-<img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" />
-</a>
-
-<a href="YOUR_INSTAGRAM_URL">
-<img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white" />
-</a>
-
-<a href="YOUR_PORTFOLIO_URL">
-<img src="https://img.shields.io/badge/Portfolio-4F46E5?style=for-the-badge&logo=googlechrome&logoColor=white" />
-</a>
-
+  <a href="YOUR_YOUTUBE_URL">
+    <img src="https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white" />
+  </a>
+  <a href="YOUR_LINKEDIN_URL">
+    <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" />
+  </a>
+  <a href="YOUR_INSTAGRAM_URL">
+    <img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white" />
+  </a>
+  <a href="YOUR_PORTFOLIO_URL">
+    <img src="https://img.shields.io/badge/Portfolio-4F46E5?style=for-the-badge&logo=googlechrome&logoColor=white" />
+  </a>
 </p>
 
 ---
 
 ## 🤝 Open to Opportunities
 
-I'm interested in opportunities involving:
-
-**AI Engineering · Generative AI · LLM Applications · RAG · AI Agents · AI Systems · Data + AI**
+**AI Engineering · Generative AI · LLM Applications · RAG · AI Agents · AI Systems**
 
 I'm interested in working with teams building **real AI products and intelligent software systems**.
 
----
-
-## 📫 Let's Connect
-
-If you're building AI products, intelligent applications or production AI systems, I'd love to connect.
-
 <p align="center">
-
-### <i>Build intelligent systems. Ship useful AI.</i>
-
-<br/>
-
-**AI · Engineering · Systems · Impact**
-
+  <strong>⚡ Build intelligent systems. Ship useful AI.</strong>
 </p>
