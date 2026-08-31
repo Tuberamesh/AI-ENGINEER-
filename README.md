@@ -1,63 +1,63 @@
-# ⚡ AI Engineering Journey
-
-### Building from Data Science Foundations to Production AI Systems
+# 🤖 AI Engineer
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Focus-AI%20Engineering-111827?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/Timeline-Sep%202026%20%E2%86%92%20Jan%202027-2563EB?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/Goal-AI%20Engineer%20Intern-16A34A?style=for-the-badge" />
+  <b>Building intelligent, reliable and production-ready AI systems.</b>
 </p>
 
 <p align="center">
-  <b>Learn → Build → Deploy → Evaluate → Share</b>
+  <img src="https://img.shields.io/badge/AI%20Engineering-111827?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Generative%20AI-111827?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/LLM%20Applications-111827?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Python-111827?style=for-the-badge&logo=python&logoColor=white" />
+  <img src="https://img.shields.io/badge/Docker-111827?style=for-the-badge&logo=docker&logoColor=white" />
+  <img src="https://img.shields.io/badge/AWS-111827?style=for-the-badge&logo=amazonaws&logoColor=white" />
 </p>
 
 ---
 
-## 👋 About This Journey
+## 👋 About Me
 
-I am a Data Science student transitioning from traditional data-focused skills toward **practical AI Engineering**.
+I'm an **AI Engineer** focused on building practical AI-powered applications and intelligent systems.
 
-This repository is my central roadmap for building the engineering skills required to design, develop, deploy, and evaluate modern AI applications.
+I work across the AI engineering stack — from **LLMs, AI APIs, embeddings and RAG to agents, APIs, databases, cloud deployment and production AI systems**.
 
-The focus is not on simply learning AI concepts.
-
-The focus is on learning how to **turn an AI idea into a working software system.**
-
-> **From data → models → applications → production.**
+My focus is on turning AI capabilities into **useful, reliable and deployable software**.
 
 ---
 
-# 🎯 Objective
-
-By January 2027, my goal is to become internship-ready for roles such as:
-
-- AI Engineer Intern
-- AI Application Engineer Intern
-- Generative AI Intern
-- LLM Engineer Intern
-- AI/ML Engineer Intern
-- Data + AI Engineer Intern
-
-### My target capability
+## 🧠 What I Do
 
 ```text
-                    REAL-WORLD PROBLEM
-                            │
-                            ▼
-                         DATA
-                            │
-                            ▼
-                   PYTHON + SQL
-                            │
-                            ▼
-                    AI / LLM MODELS
-                            │
-              ┌─────────────┴─────────────┐
-              ▼                           ▼
-             RAG                        AGENTS
-              │                           │
-              └─────────────┬─────────────┘
+                    AI ENGINEERING
+                         │
+        ┌────────────────┼────────────────┐
+        │                │                │
+        ▼                ▼                ▼
+      MODELS          KNOWLEDGE        INTELLIGENCE
+        │                │                │
+       LLMs             RAG            Agents
+       APIs          Embeddings       Tool Calling
+    Open Models      Vector DB          MCP
+        │                │                │
+        └────────────────┼────────────────┘
+                         │
+                         ▼
+                  AI APPLICATIONS
+                         │
+                         ▼
+                  SOFTWARE SYSTEMS
+                         │
+              ┌──────────┼──────────┐
+              ▼          ▼          ▼
+             APIs     Databases    Cloud
+              │          │          │
+              └──────────┼──────────┘
+                         ▼
+                    PRODUCTION
+                         │
+              ┌──────────┼──────────┐
+              ▼          ▼          ▼
+           Docker     Evaluation  Monitoring              └─────────────┬─────────────┘
                             ▼
                        AI APPLICATION
                             │
