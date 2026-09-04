@@ -14,7 +14,7 @@
 
 If you haven't gone through Day 3 yet, I recommend starting there first.
 
-👉 **[Go to Day 3 — APIs & Python Requests](./Day_3.md)**
+👉 **[Go to Day 3 — APIs & Python Requests](./DAY_3.md)**
 
 In Day 3, I learned how a Python program can communicate with an API.
 
