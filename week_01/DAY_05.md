@@ -1,6 +1,3 @@
-Yep bro — understood. You want **ONE single copy-paste Markdown block**, no separate code blocks inside it, and **under 1000 lines**.
-
-```markdown
 # 🚀 Day 5 — REST API, SDK & Postman
 
 Hey everyone! 👋
@@ -707,4 +704,3 @@ I'm documenting my learning journey step by step.
 If you're also learning **Data Engineering, AI Engineering, APIs or Python**, feel free to follow along.
 
 **Learn → Build → Document → Repeat. 🚀**
-```
