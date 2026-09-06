@@ -297,10 +297,18 @@ if response.status_code == 200:
 ## 📁 Project Structure
 
 ```text
-week01/
-└── api_project/
-    ├── main.py
-    └── README.md
+week_01/
+├── api_test.py
+├── DAY_1.md
+├── DAY_2.md
+├── DAY_3.md
+├── Day_4.md
+├── DAY_05.md
+├── DAY_06.md
+├── day5_api_test.py
+├── env_test.py
+├── hello.py
+└── main.py
 ```
 
 ---
