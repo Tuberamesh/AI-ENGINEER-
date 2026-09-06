@@ -10,7 +10,7 @@ Build a small Python application that consumes a public REST API and displays us
 
 No LLM yet — just understanding how an application communicates with an API.
 
-> 📚 **Previous Day:** [Day 5 — REST API, SDK & Postman](./DAY_05/)
+> 📚 **Previous Day:** [Day 5 — REST API, SDK & Postman](./DAY_05)
 
 ---
 
