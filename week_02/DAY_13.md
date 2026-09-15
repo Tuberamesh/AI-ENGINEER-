@@ -1,6 +1,6 @@
 # 🚀 DAY 13 — HTTP + GET Properly
 
-> **Week 3 — APIs Properly | Day 13 of 17**
+> **Week 3 — APIs Properly | Day 13 **
 
 Welcome to **Day 13 of my AI Engineering journey!** 🚀
 
