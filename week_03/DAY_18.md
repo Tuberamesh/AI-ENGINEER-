@@ -1,7 +1,7 @@
 
 # DAY 18 — LLM Fundamentals + Tokens + Context
 
-> **Week 4 — LLMs + AI APIs**
+> **Week 3 — LLMs + AI APIs**
 >
 > Day 18 focuses on understanding the core concepts behind Large Language Models before working with LLM APIs.
 
