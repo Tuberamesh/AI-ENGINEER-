@@ -1,0 +1,7 @@
+Embeddings convert text into numerical vectors.
+
+Semantic similarity measures how closely two pieces of information are related in meaning.
+
+A vector database stores and searches vector embeddings.
+
+Retrieval finds relevant information from a knowledge base.

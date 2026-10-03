@@ -1,0 +1,7 @@
+Docker is a tool for packaging applications and their dependencies.
+
+A Dockerfile defines the instructions used to build a Docker image.
+
+The docker build command creates a Docker image from a Dockerfile.
+
+The docker run command creates and starts a container from a Docker image.

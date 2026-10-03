@@ -1,0 +1,7 @@
+Python is a high-level programming language.
+
+Functions are reusable blocks of code that perform a specific task.
+
+Lists are ordered collections that can store multiple values.
+
+A dictionary stores data as key-value pairs.

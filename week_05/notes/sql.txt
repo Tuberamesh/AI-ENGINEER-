@@ -1,0 +1,7 @@
+SQL is used to communicate with relational databases.
+
+The SELECT statement retrieves data from a database table.
+
+The WHERE clause filters rows based on a condition.
+
+The GROUP BY clause groups rows so aggregate functions can be applied.
