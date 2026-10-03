@@ -82,6 +82,7 @@ print("Stored chunks:", len(documents))
 query = "How do I containerize an application?"
 
 query_embedding = model.encode(query)
+
 best_score = -1
 best_chunk = None
 
