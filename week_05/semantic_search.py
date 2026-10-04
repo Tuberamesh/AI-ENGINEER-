@@ -93,6 +93,10 @@ for doc in documents:
         best_score = score
         best_chunk = doc["text"]
 
-print("\nBest match:")
+print("\nQuestion:")
+print(query)
+
+print("\nRetrieved Context:")
 print(best_chunk)
-print("Score:", best_score)
+
+print("\nRAG Context Ready!")
