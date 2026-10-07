@@ -1,0 +1,7 @@
+SQL is used to work with data stored in relational databases.
+
+SELECT is used to retrieve data from a table.
+
+WHERE filters rows based on a condition.
+
+GROUP BY groups rows so that aggregate functions such as COUNT, SUM, and AVG can be used.

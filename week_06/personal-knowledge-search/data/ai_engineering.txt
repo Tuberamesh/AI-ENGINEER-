@@ -1,0 +1,9 @@
+AI Engineering focuses on building applications powered by artificial intelligence.
+
+RAG stands for Retrieval-Augmented Generation.
+
+RAG retrieves relevant information from a knowledge source and provides it to an LLM as context.
+
+Embeddings represent text as numerical vectors.
+
+Vector databases store embeddings and can perform similarity search to find relevant information.

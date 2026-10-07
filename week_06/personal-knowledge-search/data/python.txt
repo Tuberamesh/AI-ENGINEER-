@@ -1,0 +1,5 @@
+Python is a programming language used for automation, data analysis, web development, and AI applications.
+
+Python uses variables, functions, loops, and data structures such as lists and dictionaries.
+
+Pandas is a Python library commonly used for working with tabular data.
