@@ -1,0 +1,1043 @@
+
+--- Page 1 ---
+ 
+ 
+Module 2: Data Preprocessing 
+ 
+Types of Data, Sampling Theory, Sampling Techniques, Correlation, Feature Selection. 
+Dimensionality Reduction Techniques: Projections, Eigen Value Decomposition, Principal 
+Component Analysis (PCA). 
+ 
+2.1 Types of Data 
+ 
+Data is the collection of raw facts, measurements, or observations used for analysis, decision- 
+making, and machine learning model building. 
+2.1.1 Based on Nature of Values (Statistical Measurement Scales) 
+ 
+2.1.1.1 Qualitative (Categorical) Data: 
+ 
+ Represents categories, labels, or qualities instead of numbers. 
+ Cannot be directly measured or subjected to arithmetic operations. 
+ 
+Types: 
+ 
+Nominal Data 
+ 
+ Purely categorical, no order or ranking. 
+ Numbers may be used as labels, but they don’t imply magnitude. 
+ 
+Examples: 
+ 
+Gender → Male, Female, Other 
+Blood Group → A, B, AB, O 
+Colors → Red, Blue, Green
+
+--- Page 2 ---
+ 
+ 
+Ordinal Data 
+ 
+ Categorical data with a natural order or ranking. 
+ The intervals between ranks are not equal or meaningful. 
+ 
+Examples: 
+ 
+ Education → High School < Graduate < Postgraduate 
+ Customer Satisfaction → Poor < Average < Good < Excellent 
+ Movie Ratings → ★, ★★, ★★★, ★★★★, ★★★★★ 
+Quantitative (Numerical) Data 
+ 
+Represents measurable quantities. 
+ 
+Arithmetic operations (mean, variance, etc.) are valid. 
+ 
+Types 
+ 
+Discrete Data 
+ 
+ Countable values, integers only. 
+ No intermediate values between two points. 
+ 
+Examples: 
+ 
+ Number of students in a class 
+ Number of cars in a parking lot 
+ Goals scored in a football match 
+ 
+Continuous Data 
+ 
+ Can take any value within a range, including decimals/fractions. 
+
+--- Page 3 ---
+ 
+ 
+ Usually comes from measurement. 
+ 
+Examples: 
+ 
+ Height (175.4 cm) 
+ Weight (65.8 kg) 
+ Temperature (36.7 °C) 
+ Time (12.58 seconds) 
+ 
+Based on Structure 
+Structured Data 
+ Well-organized, stored in tables (rows & columns). 
+ Easy to search and analyze. 
+ 
+Example: Relational databases, Excel spreadsheets. 
+ 
+Unstructured Data 
+ 
+ No predefined organization. 
+ Difficult to process with traditional methods; requires NLP, CV, etc. 
+ 
+Example: Emails, Images, Videos, Social media posts. 
+ 
+Semi-Structured Data 
+ 
+ Partially structured, but not in strict table form. 
+ Has tags or markers to separate data elements. 
+ 
+Example: XML files, JSON data, NoSQL databases. 
+
+--- Page 4 ---
+ 
+ 
+Based on Time of Collection 
+Cross-Sectional Data 
+ Collected at a single point in time. 
+ Provides a snapshot of variables. 
+ 
+Example: Census 2021 population data, income survey at one time. 
+ 
+Time-Series Data 
+ 
+ Collected sequentially over time. 
+ Used for trend analysis, forecasting. 
+ 
+Example: Daily stock prices, Monthly rainfall, Yearly GDP growth. 
+ 
+2.1.2 Other Classifications in ML 
+Context Labeled Data: 
+Input data with target/output labels (used in supervised learning). 
+ 
+Example: Images with “cat” or “dog” tags. 
+ 
+Unlabeled Data: 
+ 
+No output labels (used in unsupervised learning). 
+Example: Raw customer transaction logs. 
+Balanced Data: 
+ 
+Classes are evenly distributed. 
+ 
+Imbalanced Data: 
+
+--- Page 5 ---
+ 
+ 
+One class heavily outnumbers others (e.g., fraud detection). 
+ 
+2.2 Sampling Theory 
+ 
+Sampling is a method that allows us to get information about the population based on the 
+statistics from a subset of the population (sample), without having to investigate every 
+individual. 
+ 
+ 
+2.2.1 Need of Sampling: 
+ 
+Sampling is done to draw conclusions about populations from samples, and it enables us to 
+determine a population’s characteristics by directly observing only a portion (or sample) of 
+the population. 
+ Selecting a sample requires less time than selecting every item in a population 
+ 
+ Sample selection is a cost-efficient method 
+ 
+ Analysis of the sample is less cumbersome and more practical than an analysis of the entire population. 
+Steps involved in Sampling: 
+ 
+ 
+
+--- Page 6 ---
+ 
+ 
+ 
+ 
+Let’s take an interesting case study and apply these steps to perform sampling. We recently 
+conducted General Elections in India a few months back. You must have seen the public opinion 
+polls every news channel was running at the time: 
+Step 1: 
+ 
+The first stage in the sampling process is to clearly define the target population. 
+ 
+Step 2: 
+ 
+Sampling Frame : It is a list of items or people forming a population from which the sample is 
+taken. So, the sampling frame would be the list of all the people whose names appear on the 
+voter list of a constituency. 
+
+--- Page 7 ---
+ 
+ 
+Step 3: 
+ 
+Generally, probability sampling methods are used because every vote has equal value and any 
+person can be included in the sample irrespective of his caste, community, or religion. Different 
+samples are taken from different regions all over the country. 
+Step 4: 
+ 
+Sample Size : It is the number of individuals or items to be taken in a sample that would be 
+enough to make inferences about the population with the desired level of accuracy and 
+precision. Larger the sample size, more accurate our inference about the population would be. 
+For the polls, agencies try to get as many people as possible of diverse backgrounds to be 
+included in the sample as it would help in predicting the number of seats a political party can 
+win. 
+Step 5: 
+ 
+Once the target population, sampling frame, sampling technique, and sample size have been 
+established, the next step is to collect data from the sample. In opinion polls, agencies generally 
+put questions to the people, like which political party are they going to vote for or has the 
+previous party done any work, etc. Based on the answers, agencies try to interpret who the 
+people of a constituency are going to vote for and approximately how many seats is a political 
+party going to win. 
+2.3 Sampling Techniques 
+ 
+Sampling techniques are methods used to select a portion of a population to study, in order to make 
+inferences about the entire population. Broadly, they are divided into two types: probability 
+sampling and non-probability sampling. In probability sampling, every member of the population 
+has a known and non-zero chance of being selected. Common methods include simple random 
+sampling, where every member has an equal chance of selection; systematic sampling, where every 
+k-th member is chosen after a random start; stratified sampling, where the population is divided 
+into homogeneous groups (strata) and samples are taken from each; 
+
+--- Page 8 ---
+ 
+ 
+cluster sampling, where entire clusters are randomly selected; and multi-stage sampling, which 
+combines several sampling stages. 
+In non-probability sampling, not every individual has a chance of being selected, often making it 
+less representative but more practical in certain situations. Examples include convenience 
+sampling, where easily available subjects are selected; judgmental or purposive sampling, based 
+on the researcher’s judgment; quota sampling, ensuring certain groups are represented in fixed 
+proportions; and snowball sampling, where existing participants recruit others, often used for hard-
+to-reach populations. Probability sampling is preferred for generalizable, unbiased results, while 
+non-probability sampling is often used in exploratory or qualitative research where probability-
+based methods are not feasible. 
+2.3.1 Different Types of Sampling: 
+ 
+The different types of sampling techniques are, 
+ 
+Probability Sampling: In probability sampling, every element of the population has an equal 
+chance of being selected. Probability sampling gives us the best chance to create a sample that is 
+truly representative of the population. 
+Non-Probability Sampling: In non-probability sampling, all elements do not have an equal 
+chance of being selected. Consequently, there is a significant risk of ending up with a non- 
+representative sample which does not produce generalizable results For example, let’s say our 
+population consists of 20 individuals. Each individual is numbered from 1 to 20 and is 
+represented by a specific color (red, blue, green, or yellow). Each person would have odds of 1 
+out of 20 of being chosen in probability sampling. 
+With non-probability sampling, these odds are not equal. A person might have a better chance of 
+being chosen than others. So now that we have an idea of these two sampling types, let’s dive 
+into each and understand the different types of sampling under each section. 
+
+--- Page 9 ---
+ 
+ 
+2.3.2 Types of Probability Sampling: 
+ 
+2.3.2.1 Simple Random Sampling: 
+ 
+This is a type of sampling technique you must have come across at some point. Here, every 
+individual is chosen entirely by chance and each member of the population has an equal chance of 
+being selected. Simple random sampling reduces selection bias. 
+ 
+ 
+ 
+ 
+One big advantage of this technique is that it is the most direct method of probability sampling. 
+But it comes with a caveat – it may not select enough individuals with our characteristics of 
+interest. Monte Carlo methods use repeated random sampling for the estimation of unknown 
+parameters. 
+2.3.2.2 Systematic Sampling: 
+ 
+In this type of sampling, the first individual is selected randomly and others are selected using a 
+fixed ‘sampling interval’. Let’s take a simple example to understand this. 
+
+--- Page 10 ---
+ 
+ 
+Say our population size is x and we have to select a sample size of n. Then, the next individual 
+that we will select would be x/nth intervals away from the first individual. We can select the rest 
+in the same way. 
+ 
+ 
+ 
+ 
+Suppose, we began with person number 3, and we want a sample size of 5. So, the next 
+individual that we will select would be at an interval of (20/5) = 4 from the 3rd person, i.e. 7 
+(3+4), and so on. 
+3, 3+4=7, 7+4=11, 11+4=15, 15+4=19 = 3, 7, 11, 15, 19 
+
+--- Page 11 ---
+ 
+ 
+Systematic sampling is more convenient than simple random sampling. However, it might also 
+lead to bias if there is an underlying pattern in which we are selecting items from the population 
+(though the chances of that happening are quite rare). 
+2.3.2.3 Stratified Sampling: 
+ 
+In this type of sampling, we divide the population into subgroups (called strata) based on 
+different traits like gender, category, etc. And then we select the sample(s) from these 
+subgroups: 
+ 
+
+--- Page 12 ---
+ 
+ 
+ 
+ 
+Here, we first divided our population into subgroups based on different colors of red, yellow, 
+green and blue. Then, from each color, we selected an individual in the proportion of their 
+numbers in the population. We use this type of sampling when we want representation from all 
+the subgroups of the population. However, stratified sampling requires proper knowledge of the 
+characteristics of the population. 
+2.3.2.4 Cluster Sampling: 
+ 
+In a clustered sample, we use the subgroups of the population as the sampling unit rather than 
+individuals. The population is divided into subgroups, known as clusters, and a whole cluster is 
+randomly selected to be included in the study: 
+ 
+
+--- Page 13 ---
+ 
+ 
+ 
+ 
+In the above example, we have divided our population into 5 clusters. Each cluster consists of 4 
+individuals and we have taken the 4th cluster in our sample. We can include more clusters as per 
+our sample size. 
+This type of sampling is used when we focus on a specific region or area. 
+ 
+2.3.3 Types of Non-Probability Sampling: 
+ 
+2.3.3.1 Convenience Sampling: 
+ 
+This is perhaps the easiest method of sampling because individuals are selected based on their 
+availability and willingness to take part. 
+Here, let’s say individuals numbered 4, 7, 12, 15 and 20 want to be part of our sample, and 
+hence, we will include them in the sample. 
+ 
+
+--- Page 14 ---
+ 
+ 
+ 
+ 
+Convenience sampling is prone to significant bias, because the sample may not be the 
+representation of the specific characteristics such as religion or, say the gender, of the 
+population. 
+2.3.3.2 Quota Sampling: 
+ 
+ 
+ 
+ 
+ 
+ 
+In this type of sampling, we choose items based on predetermined characteristics of the 
+population. 
+Consider that we have to select individuals having a number in multiples of four for our sample: 
+Therefore, the individuals numbered 4, 8, 12, 16, and 20 are already reserved for our sample. 
+In quota sampling, the chosen sample might not be the best representation of the characteristics 
+of the population that weren’t considered. 
+
+--- Page 15 ---
+ 
+ 
+2.3.3.3 Judgment Sampling: 
+ 
+It is also known as selective sampling. It depends on the judgment of the experts when choosing 
+whom to ask to participate. 
+ 
+ 
+ 
+ 
+ 
+Suppose, our experts believe that people numbered 1, 7, 10, 15, and 19 should be considered for 
+our sample as they may help us to infer the population in a better way. As you can imagine, quota 
+sampling is also prone to bias by the experts and may not necessarily be representative. 
+ 
+ 
+2.3.3.4 Snowball Sampling: 
+
+--- Page 16 ---
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+I quite like this sampling technique. Existing people are asked to nominate further people 
+known to them so that the sample increases in size like a rolling snowball. This method of 
+sampling is effective when a sampling frame is difficult to identify. 
+ 
+ 
+Here, we had randomly chosen person 1 for our sample, and then he/she recommended person 6, 
+and person 6 recommended person 11, and so on. 
+ 
+ 
+1->6->11->14->19 
+ 
+There is a significant risk of selection bias in snowball sampling, as the referenced individuals 
+will share common traits with the person who recommends them. 
+ 
+ 
+ 
+ 
+
+--- Page 17 ---
+ 
+ 
+ 
+Example: 
+A city has 9 lakhs registered voters. 
+A political research team wants to conduct a survey on voter preferences before elections. 
+They have limited budget and time. 
+They consider the following options for sampling: 
+(a) Simple Random Sampling – Generate a list of all voters and randomly pick 1000 voters. 
+(b) Stratified Sampling – Divide voters into strata based on age groups: 18–30, 31–50, 51+, 
+and then randomly sample 400, 400, and 200 from each group. 
+(c) Cluster Sampling – Randomly select 10 wards in the city and survey all voters in those 
+wards. 
+(d) Convenience (N-P) – Stand near a busy metro station and ask 1000 passers-by about their 
+voting preferences. 
+(e) Snowball Sampling – Start with 10 known voters and ask each of them to refer more voters 
+until 1000 are surveyed. 
+ 
+Questions 
+(i) Which method ensures the highest accuracy of representing the entire city? 
+→ Stratified or Simple Random Sampling 
+(ii) Which is the cheapest and fastest? 
+→ Convenience Sampling 
+(iii) If the team specifically wants to understand the opinion of young voters (18–30), which 
+method is suitable? 
+→ Stratified Sampling 
+(iv) Why does cluster sampling give misleading results in this case? 
+→ Because selected clusters (wards) may not represent the entire city accurately. 
+(v) If a survey is about a sensitive issue, which method can be more practical? 
+→ Snowball Sampling 
+
+--- Page 18 ---
+ 
+ 
+ 
+ 
+2.4 Correlation 
+ 
+Correlation: The degree of relationship between the variables under consideration is measure 
+through the correlation analysis. 
+ The measure of correlation called the correlation coefficient 
+ 
+ The degree of relationship is expressed by coefficient which range from correlation 
+ 
+ 
+ The direction of change is indicated by a sign. 
+ 
+ The correlation analysis enable us to have an idea about the degree & direction of the 
+relationship between the two variables under study. 
+Correlation is a statistical tool that helps to measure and analyze the degree of relationship between 
+two variables. 
+Correlation analysis deals with the association between two or more variables. 
+ 
+2.4.1 Correlation: 
+ 
+Causation means cause & effect relation. Correlation denotes the interdependency among the 
+variables for correlating two phenomenon, it is essential that the two phenomenon should have 
+cause-effect relationship,& if such relationship does not exist then the two phenomenon can not be 
+correlated. 
+If two variables vary in such a way that movement in one are accompanied by movement in other, 
+these variables are called cause and effect relationship. 
+Causation always implies correlation but correlation does not necessarily implies causation. 
+
+--- Page 19 ---
+ 
+ 
+2.4.2 Types of Correlation Type-I: 
+ 
+ 
+Types of Correlation Type-I: 
+ 
+Positive Correlation: The correlation is said to be positive correlation if the values of two 
+variables changing with same direction. 
+Ex. Pub. Exp. & sales, Height & weight. 
+ 
+Negative Correlation: The correlation is said to be negative correlation when the values of 
+variables change with opposite direction. 
+Ex. Price & qty. demanded. 
+ 
+Direction of the Correlation: 
+ 
+Positive relationship – Variables change in the same direction. 
+(Indicated by sign; (+) or (-).) 
+As X is increasing, Y is increasing 
+As X is decreasing, Y is 
+decreasing 
+E.g., As height increases, so does weight. 
+Negative relationship – Variables change in opposite directions. 
+As X is increasing, Y is decreasing 
+
+--- Page 20 ---
+ 
+ 
+As X is decreasing, Y is increasing 
+ 
+E. g., As TV time increases, grades decrease 
+More examples: 
+Positive relationships: 
+ 
+ water consumption and temperature. 
+ 
+ study time and grades. 
+ 
+Negative relationships: 
+ 
+ alcohol consumption and driving ability. 
+ 
+ Price & quantity demanded 
+ 
+2.4.3 Types of Correlation Type-II: 
+ 
+ 
+ 
+ 
+Types of Correlation Type-II 
+
+--- Page 21 ---
+ 
+ 
+Simple correlation: Under simple correlation problem there are only two variables are studied. 
+ 
+Multiple Correlation: Under Multiple Correlation three or more than three variables are studied. 
+ 
+Ex. 
+ 
+Partial correlation: analysis recognizes more than two variables but considers only two variables 
+keeping the other constant. 
+Total correlation: is based on all the relevant variables, which is normally not feasible. 
+ 
+2.4.4 Types of Correlation Type-III: 
+ 
+ 
+ 
+ 
+Types of Correlation Type-III 
+ 
+Linear correlation: Correlation is said to be linear when the amount of change in one variable 
+tends to bear a constant ratio to the amount of change in the other. The graph of the variables 
+having a linear relationship will form a straight line. 
+Ex    X = 1,  2,    3,    4,    5,    6,    7,    8, 
+ 
+Y = 5, 7, 
+9, 
+11, 13, 15, 17, 19, 
+Y = 3 + 2x 
+
+--- Page 22 ---
+ 
+ 
+Non Linear correlation: The correlation would be non linear if the amount of change in one 
+variable does not bear a constant ratio to the amount of change in the other variable. 
+2.4.5 Methods of Studying Correlation: 
+ 
+ Scatter Diagram Method 
+ 
+ Karl Pearson’s Coefficient of Correlation 
+ 
+ 
+Scatter Diagram Method: 
+ 
+Scatter Diagram is  a graph of observed plotted points where each points represents the values 
+of 
+X & Y as a coordinate. It portrays the relationship between these two variables 
+graphically. 
+A perfect positive   correlation 
+ 
+ 
+ 
+High Degree of positive correlation: 
+
+--- Page 23 ---
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+--- Page 24 ---
+ 
+ 
+ 
+ 
+ 
+Advantages of Scatter Diagram: 
+ 
+ Simple & Non Mathematical method 
+ 
+ Not influenced by the size of extreme item 
+ 
+ First step in investing 
+the relationship between two variables 
+ 
+ Disadvantage of scatter diagram: 
+ 
+ Can not adopt the an exact degree of correlation 
+ 
+Karl Pearson's Coefficient of Correlation: 
+ 
+ 
+ 
+ 
+ 
+ 
+
+--- Page 25 ---
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Advantages of Pearson’s Coefficient: 
+ 
+ It summarizes in one value, the degree of correlation & direction of correlation also. 
+ 
+ Limitation of Pearson’s Coefficient: 
+ 
+ Always assume linear relationship 
+ 
+ Interpreting the value of r is difficult. 
+ 
+ Value of Correlation Coefficient is affected by the extreme values. 
+ 
+ 
+
+--- Page 26 ---
+ 
+ 
+2.5 Feature Selection 
+ 
+Feature Selection = the process of selecting the most relevant features (independent variables) from 
+your dataset to improve model performance. 
+ 
+Why needed? → To reduce overfitting, training time, noise, and improve accuracy. 
+ 
+Example: If predicting house prices, features like location, size, number of rooms matter, but 
+color of the door might not. 
+Supervised vs Unsupervised Feature Selection 
+1. Supervised Feature Selection 
+ 
+Uses target labels (Y) to guide which features are important. 
+ 
+Example: 
+o Dataset → Student performance with features: study_hours, attendance, hobbies, age, 
+marks. 
+o Since the label (marks) is available, we can test which features strongly correlate with 
+marks (study_hours, attendance) → keep those. 
+2. Unsupervised Feature Selection 
+ 
+No labels (Y). Focus is only on relationships among features. 
+ 
+Example: 
+o Dataset → Customer details without purchase info. 
+o If age and income are highly correlated (redundant), we keep one of them. 
+Feature Selection Methods 
+1. Filter Methods 
+Use statistical measures to rank or select features. 
+Method 
+Description 
+Correlation Coefficient For numeric features — keep features highly correlated with target 
+Chi-square Test 
+For categorical features — measures independence between feature and target 
+Information Gain 
+Based on entropy; measures how much information a feature gives about target 
+ 
+2. Wrapper Methods 
+Use model performance to evaluate subsets of features. 
+Method 
+Description 
+Forward Selection 
+Start with no features → add one at a time that improves performance 
+
+--- Page 27 ---
+ 
+ 
+Method 
+Description 
+Backward Elimination 
+Start with all features → remove least significant features step by step 
+Recursive Feature Elimination (RFE) Train model → rank features → remove weakest recursively 
+3. Embedded Methods 
+Feature selection happens during model training. 
+Model 
+How it selects 
+Lasso Regression 
+Shrinks less important coefficients to zero 
+Decision Tree 
+Uses information gain for splitting, giving feature importance 
+Random Forest 
+Gives average feature importance from multiple trees 
+ 
+Filter Method 
+• Correlation Coefficient 
+import pandas as pd   
+data = {'Study hrs': [2,4,6,8,10],   
+        'Attendance': [50,60,70,80,90],   
+        'Age': [15,15.5,15,15,15],   
+        'Marks': [60,70,80,90,95]}   
+ 
+df = pd.DataFrame(data)   
+print(df.corr()['Marks'])   
+Sample Output: 
+ 
+Study hours to marks → 0.99 
+ 
+Attendance to marks → 0.98 
+ 
+Age to marks → 0.1 
+Output of df.corr() 
+Pair 
+Correlation 
+Study hrs to Study hrs 
+1 
+Study hrs to Attendance 
+0.98 
+Study hrs to Age 
+0.5 
+Study hrs to Marks 
+0.99 
+Attendance to Study hrs 
+0.98 
+Attendance to Attendance 1 
+Attendance to Age 
+0.6 
+Attendance to Marks 
+0.96 
+
+--- Page 28 ---
+ 
+ 
+Pair 
+Correlation 
+Age to Study hrs 
+0.5 
+Age to Attendance 
+0.6 
+Age to Age 
+1 
+Age to Marks 
+0.3 
+Marks to Study hrs 
+0.99 
+Marks to Attendance 
+0.96 
+Marks to Age 
+0.3 
+Marks to Marks 
+1 
+Correlation Coefficient is applicable on numerical inputs and outputs. 
+CH- SQUARE METHOD: 
+ 
+ 
+
+--- Page 29 ---
+ 
+ 
+ 
+
+--- Page 30 ---
+ 
+ 
+ 
+ 
+ 
+ 
+
+--- Page 31 ---
+ 
+ 
+ 
+ 
+ 
+ 
+
+--- Page 32 ---
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+--- Page 33 ---
+ 
+ 
+ 
+2.6 Dimensionality Reduction Techniques: 
+ 
+Dimensionality Reduction is reducing the number of features (variables) in a dataset while 
+retaining maximum useful information. 
+Dimensionality reduction techniques: Dimensionality reduction technique can be defined as, "It 
+is a way of converting the higher dimensions dataset into lesser dimensions dataset ensuring that 
+it provides similar information." These techniques are widely used in machine learning for 
+obtaining a better fit predictive model while solving the classification and regression problems.  
+Benefits of applying Dimensionality Reduction:  
+ By reducing the dimensions of the features, the space required to store the dataset also gets 
+reduced. 
+ Less Computation training time is required for reduced dimensions of features.  
+ Reduced dimensions of features of the dataset help in visualizing the data quickly.  
+ It removes the redundant features (if present) by taking care of multicollinearity. 
+Avoids the curse of dimensionality. 
+Two classical approaches are Projections and Eigenvalue Decomposition (EVD). 
+ 
+Types of Projection in Dimensionality Reduction 
+ 
+Projection is the process of mapping high-dimensional data onto a lower-dimensional subspace.  
+ 
+ 
+ 
+ 
+ 
+
+--- Page 34 ---
+ 
+ 
+ 
+ 
+We mainly discuss 3 types of projection in the context of dimensionality reduction: 
+ Simple (or Feature Selection) Projection 
+ Linear Projection 
+ Optimal Projection (Data-driven, e.g., PCA) 
+ 
+2.6.1.1 Simple Projection (Feature Selection) 
+ 
+The simplest form of projection: just ignore some features and keep others. It 
+assumes that not all dimensions are equally important. 
+Example: If you have height, weight, and shoe size → you may just use height & weight 
+and drop shoe size. 
+Mathematically, 
+
+--- Page 35 ---
+ 
+ 
+ 
+Just drop the 3rd coordinate. 
+Dataset in 3D: 
+(2,4,5),(3,6,8),(4,5,9) 
+ 
+Projecting onto (x, y): 
+(2,4), (3,6),(4,5) 
+ 
+ 
+Linear Projection 
+ 
+Instead of simply dropping dimensions, we create new features as linear combinations of 
+original features. 
+Allows mixing information from multiple dimensions. 
+ 
+ 
+ 
+
+--- Page 36 ---
+ 
+ 
+ 
+ 
+This method preserves more info than just dropping coordinates. 
+ 
+Optimal Projection (Data-driven, e.g., PCA) 
+ 
+Principal Component Analysis (PCA) & Eigen value decomposition: 
+ 
+Principal Component Analysis (PCA) is a powerful technique used in data analysis, particularly 
+for reducing the dimensionality of datasets while preserving crucial information. It does this by 
+transforming the original variables into a set of new, uncorrelated variables called principal 
+components.  
+ Principal Component Analysis is a well-known dimension reduction technique.  
+ It transforms the variables into a new set of variables called as principal components. 
+  These principal components are linear combination of original variables and are orthogonal.  
+ The first principal component accounts for most of the possible variation of original data.  
+ The second principal component does its best to capture the variance in the data.  
+ There can be only two principal components for a two-dimensional data set. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+--- Page 37 ---
+ 
+ 
+The steps involved in PCA Algorithm are as follows – 
+ Step-01: Get data.  
+Step-02: Compute the mean vector (µ). 
+ Step-03: Subtract mean from the given data.  
+Step-04: Calculate the covariance matrix.  
+Step-05: Calculate the eigen vectors and eigen values of the covariance matrix.  
+Step-06: Choosing components and forming a feature vector. 
+ Step-07: Deriving the new data set.  
+ 
+PROBLEM: Given data = { 2, 3, 4, 5, 6, 7 ; 1, 5, 3, 6, 7, 8 }. Compute the principal component using 
+PCA Algorithm. 
+ 
+OR 
+Consider the two dimensional patterns (2, 1), (3, 5), (4, 3), (5, 6), (6, 7), (7, 8). Compute the principal 
+component using PCA Algorithm. 
+OR 
+ Compute the principal component of following data-  
+CLASS 1 = X = 2 , 3 , 4 ; Y = 1 , 5 , 3 
+CLASS 2 = X = 5 , 6 , 7 ;  Y = 6 , 7 , 8 
+ 
+Step-01: Get data. The given feature vectors are- 
+x1 = (2, 1)  
+x2 = (3, 5)  
+x3 = (4, 3) 
+x4 = (5, 6)  
+x5 = (6, 7) 
+x6 = (7, 8) 
+  
+ 
+ 
+Step-02: Calculate the mean vector (µ).  
+Mean vector (µ) = ((2 + 3 + 4 + 5 + 6 + 7) / 6, (1 + 5 + 3 + 6 + 7 + 8) / 6) = (4.5, 5) 
+ 
+ 
+ 
+ 
+ 
+Step-03: Subtract mean vector (µ) from the given feature vectors. 
+ 
+  x1 – µ = (2 – 4.5, 1 – 5) = (-2.5, -4) 
+
+--- Page 38 ---
+ 
+ 
+  x2 – µ = (3 – 4.5, 5 – 5) = (-1.5, 0)  
+  x3 – µ = (4 – 4.5, 3 – 5) = (-0.5, -2)  
+  x4 – µ = (5 – 4.5, 6 – 5) = (0.5, 1)  
+  x5 – µ = (6 – 4.5, 7 – 5) = (1.5, 2)  
+  x6 – µ = (7 – 4.5, 8 – 5) = (2.5, 3) 
+ 
+Feature vectors (xi) after subtracting mean vector (µ) are- 
+ 
+ 
+ 
+ 
+Step-04: Calculate the covariance matrix. Covariance matrix is given by- 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Covariance matrix = (m1 + m2 + m3 + m4 + m5 + m6) / 6 
+ On adding the above matrices and dividing by 6, we get- 
+
+--- Page 39 ---
+ 
+ 
+  
+ 
+Step-05: Calculate the eigen values and eigen vectors of the covariance matrix. 
+ λ is an eigen value for a matrix M if it is a solution of the characteristic equation |M – λI| = 0.  
+So, we have- 
+ 
+ 
+ 
+From here, (2.92 – λ)(5.67 – λ) – (3.67 x 3.67) = 0 
+ 16.56 – 2.92λ – 5.67λ + λ2 – 13.47 = 0  
+λ2 – 8.59λ + 3.09 = 0 
+Solving this quadratic equation,  
+we get λ = 8.22, 0.38  
+Thus, two eigen values are λ1 = 8.22 and λ2 = 0.38. 
+ the second eigen value is very small compared to the first eigen value. 
+ So, the second eigen vector can be left out. 
+ Eigen vector corresponding to the greatest eigen value is the principal component for the given data set.  
+So we find the eigen vector corresponding to eigen value λ1.  
+We use the following equation to find the eigen vector  - 
+ MX = λX where   -  
+ M = Covariance Matrix  
+ X = Eigen vector  
+ λ = Eigen value 
+Substituting the values in the above equation, we get- 
+ 
+ 
+Solving these, 
+ we get-  
+
+--- Page 40 ---
+ 
+ 
+ 
+2.92X1 + 3.67X2 = 8.22X1  
+3.67X1 + 5.67X2 = 8.22X2 
+ On simplification,  
+we get  - 
+ 5.3X1 = 3.67X2 ………(1)  
+3.67X1 = 2.55X2 ………(2) 
+ 
+ From (1) and (2), X1 = 0.69X2 From (2), the eigen vector is – 
+ 
+ 
+The above can be further normalized: 
+ 
+ 
+ 
+ 
+ 
+
+--- Page 41 ---
+ 
+ 
+ 
+ 
+ 
+
+--- Page 42 ---
+ 
+ 
+ 
+ 
+
+--- Page 43 ---
+ 
+ 
+ 
+ 
+
+--- Page 44 ---
+ 
+ 
+ 
