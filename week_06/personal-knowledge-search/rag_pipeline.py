@@ -1,10 +1,15 @@
 
+from pathlib import Path
+
 import chromadb
 import ollama
 from chromadb.utils import embedding_functions
 
-# Connect to the existing ChromaDB
-client = chromadb.PersistentClient(path="./chroma_db")
+
+# Locate the existing database regardless of the terminal directory.
+DB_PATH = Path(__file__).resolve().parent / "chroma_db"
+
+client = chromadb.PersistentClient(path=str(DB_PATH))
 
 embedding_function = (
     embedding_functions.SentenceTransformerEmbeddingFunction(
@@ -18,45 +23,26 @@ collection = client.get_collection(
 )
 
 MODEL = "gemma3:1b"
-N_RESULTS = 1
 DISTANCE_THRESHOLD = 0.7
-
-
 SYSTEM_PROMPT = """
-You are a helpful College Documentation Assistant.
+You answer questions using the document context provided by the user.
 
-Answer the user's question using the supplied document context.
-
-IMPORTANT:
-- Read the entire context carefully.
-- If the context contains information that answers the question,
-  give a clear and direct answer.
-- You may rephrase the information in simple English.
-- Do not refuse when the answer is present in the context.
-- Do not add facts that are not supported by the context.
-- Only if the answer is genuinely absent from the context, say:
-  "I couldn't find that information in the provided documents."
+Instructions:
+1. Read the context carefully.
+2. Answer the question using relevant information from the context.
+3. If the context directly contains the answer, give that answer.
+4. Only say "I couldn't find that information in the provided documents."
+   if the context does not contain the answer.
+5. Keep the answer short and clear.
 """
 
 
-print("College/Documentation RAG Assistant")
-print("Ask questions about your documents.")
-print("Type 'exit' to quit.\n")
+def answer_question(question: str, top_k: int = 1) -> dict:
+    """Retrieve relevant passages and generate an answer with Gemma."""
 
-while True:
-    question = input("You: ").strip()
-
-    if question.lower() in {"exit", "quit"}:
-        print("Goodbye, bro!")
-        break
-
-    if not question:
-        continue
-
-    # Retrieve the single closest passage
     results = collection.query(
         query_texts=[question],
-        n_results=N_RESULTS,
+        n_results=min(top_k, collection.count()),
         include=["documents", "metadatas", "distances"]
     )
 
@@ -64,49 +50,44 @@ while True:
     metadatas = results["metadatas"][0]
     distances = results["distances"][0]
 
-    # Handle empty results
-    if not documents:
-        print(
-            "\nAssistant: I couldn't find that information "
-            "in the provided documents.\n"
+    sources = []
+    context_parts = []
+
+    for document, metadata, distance in zip(
+        documents, metadatas, distances
+    ):
+        if distance > DISTANCE_THRESHOLD:
+            continue
+
+        source = metadata.get("source", "Unknown")
+        page = metadata.get("page", 0)
+
+        sources.append({
+            "source": source,
+            "page": page,
+            "distance": round(float(distance), 4)
+        })
+
+        context_parts.append(
+            f"Source: {source}, page {page}\nContent: {document}"
         )
-        continue
 
-    distance = distances[0]
+    if not context_parts:
+        return {
+            "answer": (
+                "I couldn't find that information "
+                "in the provided documents."
+            ),
+            "sources": []
+        }
 
-    # Reject weak matches before asking Gemma
-    if distance > DISTANCE_THRESHOLD:
-        print(f"\nBest match distance: {distance:.4f}")
-        print(
-            "Assistant: I couldn't find that information "
-            "in the provided documents.\n"
-        )
-        continue
-
-    document = documents[0]
-    metadata = metadatas[0]
-
-    source = metadata.get("source", "Unknown")
-    page = metadata.get("page", 0)
-
-    reference = f"{source}, page {page}" if page else source
-
-    # Display the accepted source
-    print("\nRetrieved source:")
-    print(f"Source: {reference}")
-    print(f"Distance: {distance:.4f}")
-    print(f"Passage: {document[:500]}")
-
-    # Prepare context for Gemma
-    context = f"Source: {reference}\nContent: {document}"
+    context = "\n\n".join(context_parts)
 
     response = ollama.chat(
         model=MODEL,
+        options={"temperature": 0},
         messages=[
-            {
-                "role": "system",
-                "content": SYSTEM_PROMPT
-            },
+            {"role": "system", "content": SYSTEM_PROMPT},
             {
                 "role": "user",
                 "content": (
@@ -117,5 +98,28 @@ while True:
         ]
     )
 
-    print("\nAssistant:", response["message"]["content"])
-    print("\n" + "-" * 50 + "\n")
+    return {
+        "answer": response["message"]["content"],
+        "sources": sources
+    }
+
+
+# Run the interactive chatbot only when this file is executed directly.
+if __name__ == "__main__":
+    print("College/Documentation RAG Assistant")
+    print("Type 'exit' to quit.\n")
+
+    while True:
+        question = input("You: ").strip()
+
+        if question.lower() in {"exit", "quit"}:
+            break
+
+        if not question:
+            continue
+
+        result = answer_question(question)
+
+        print("\nAssistant:", result["answer"])
+        print("Sources:", result["sources"])
+        print("-" * 50)
