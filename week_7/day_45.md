@@ -18,5 +18,4 @@
 ## Key takeaway
 FastAPI generates API documentation automatically and supports predictable error responses through HTTP exceptions and custom exception handlers.
 
-## Next
-Day 46 — File uploads and background tasks, according to the roadmap.
+

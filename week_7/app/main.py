@@ -1,10 +1,23 @@
 
-from fastapi import FastAPI, HTTPException
+from pathlib import Path
+import sys
+
+from fastapi import FastAPI, HTTPException, Request
+from fastapi.responses import JSONResponse
+
 from app.schemas import AskRequest, AskResponse
 
+# Locate the existing RAG project.
+RAG_PROJECT = (
+    Path(__file__).resolve().parents[2]
+    / "week_06"
+    / "personal-knowledge-search"
+)
 
-from fastapi import Request
-from fastapi.responses import JSONResponse
+sys.path.insert(0, str(RAG_PROJECT))
+
+from rag_pipeline import answer_question
+
 
 app = FastAPI(title="Week 7 - AI Engineer API")
 
@@ -23,13 +36,27 @@ def health_check():
 def say_hello(name: str):
     return {"message": f"Hello, {name}!"}
 
+
 @app.post("/ask", response_model=AskResponse)
 def ask_question(request: AskRequest):
-    return AskResponse(
-        question=request.question,
-        answer=f"You asked: {request.question}",
-        top_k=request.top_k
-    )
+    try:
+        result = answer_question(
+            question=request.question,
+            top_k=request.top_k
+        )
+
+        return AskResponse(
+            question=request.question,
+            answer=result["answer"],
+            top_k=request.top_k,
+            sources=result["sources"]
+        )
+
+    except Exception:
+        raise HTTPException(
+            status_code=503,
+            detail="The RAG service is temporarily unavailable."
+        )
 
 
 @app.get("/documents/{document_id}")
@@ -53,7 +80,6 @@ async def unexpected_error_handler(
     request: Request,
     exc: Exception
 ):
-    # Log the real exception privately in production.
     return JSONResponse(
         status_code=500,
         content={"detail": "An unexpected error occurred"}
