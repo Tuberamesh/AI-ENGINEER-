@@ -1,10 +1,16 @@
-
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, field_validator
 
 
 class AskRequest(BaseModel):
     question: str = Field(min_length=3, max_length=500)
     top_k: int = Field(default=3, ge=1, le=10)
+
+    @field_validator("question", mode="before")
+    @classmethod
+    def clean_question(cls, value):
+        if isinstance(value, str):
+            return value.strip()
+        return value
 
 
 class SourceInfo(BaseModel):
