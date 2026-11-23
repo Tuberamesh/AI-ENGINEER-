@@ -1,0 +1,13 @@
+Decoder Space is a technology learning brand.
+
+The company focuses on AI engineering,
+Python programming, automation and data systems.
+
+AI agents use tools to complete tasks.
+Memory helps agents retain previous information.
+
+Database search allows agents to retrieve
+structured information from databases.
+
+Document search allows agents to retrieve
+information from local knowledge files.
